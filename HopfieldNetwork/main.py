@@ -81,7 +81,7 @@ def animate_convergence(nn_shape, states, im_scale=10, anim_time=None, noise=Non
 def main():
     
     states = [
-        ascii_art_to_state(  # make concentric squares
+        ascii_art_to_state(
         '''
         # # # # # # # #
         # . . . . . . #
@@ -92,7 +92,7 @@ def main():
         # . . . . . . #
         # # # # # # # #
         '''),
-        ascii_art_to_state(  # make an X
+        ascii_art_to_state(
         '''
         # . . . . . . #
         . # . . . . # .
@@ -103,7 +103,7 @@ def main():
         . # . . . . # .
         # . . . . . . #
         '''),
-        ascii_art_to_state(  # make a circle
+        ascii_art_to_state(
         '''
         . . # # # # . .
         . # . . . . # .
@@ -114,7 +114,7 @@ def main():
         . # . . . . # .
         . . # # # # . . 
         '''),
-        ascii_art_to_state(  # fill the top half with #'s
+        ascii_art_to_state(
         '''
         # # # # # # # #
         # # # # # # # #
@@ -125,7 +125,7 @@ def main():
         . . . . . . . .
         . . . . . . . .
         '''),
-        ascii_art_to_state(  # fill the left half with #'s
+        ascii_art_to_state(
         '''
         # # # # . . . .
         # # # # . . . .
