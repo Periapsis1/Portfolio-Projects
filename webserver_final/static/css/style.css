@@ -1,0 +1,77 @@
+
+:root {
+    --main-background-color: #f5f5f5;
+    --nav-bar-background-color: #000000;
+    --main-text-color: #000000;
+    --nav-bar-text-color: #ffffff;
+    --site-list-text-color: #000000;
+}
+
+body {
+    background-color: var(--main-background-color);
+    color: var(--main-text-color);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar {
+    background-color: var(--nav-bar-background-color);
+    color: var(--nav-bar-text-color);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-url-list {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-url-list div {
+    list-style-type: none;
+    margin: 0;
+    padding-inline: 10px;
+}
+
+.navbar-url-list div a {
+    color: var(--nav-bar-text-color);
+    text-decoration: none;
+}
+
+li.site-url {
+    list-style-type: none;
+}
+
+li.site-url a {
+    text-decoration: none;
+}
+
+.db-table {
+    border-spacing: 0;
+    border: 1px solid #ccc;
+}
+
+.db-table td, .db-table th {
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    vertical-align: top;
+}
+
+h1.site-name a {
+    text-decoration: none;
+    color: inherit;
+}

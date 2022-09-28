@@ -1,0 +1,14 @@
+{% extends "main.jinja" %}
+
+{% block content %}
+<h2>
+    Database tables
+</h2>
+<ul class="site-url-list">
+    {% for site in sites %}
+        <li class="site-url">
+            <a href="/tables/{{ camel_to_snake(site) }}">{{ site }}</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

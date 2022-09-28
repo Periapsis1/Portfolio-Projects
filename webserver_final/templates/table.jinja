@@ -1,0 +1,44 @@
+{% extends "main.jinja" %}
+
+{% block other_imports %}
+<script>var table_name = "{{ subpage_name }}"; var crud_operations = "{{ table_info }}";</script>
+<script src="{{ url_for('static', filename='js/update_fields.js') }}"></script>
+<script src="{{ url_for('static', filename='js/filter_rows.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<h2 >
+    {{ subpage_name }}
+</h2>
+{% if subpage_name == "VisitDiagnoses" %}
+<div class="search">
+    <label for="search-input">Filter by diagnosis name:</label>
+    <select name="search-input" id="search-input" onchange="filter_table()">
+        {% for diagnosis in diagnosis_list %}
+        <option value="{{ diagnosis }}">{{ diagnosis }}</option>
+        {% endfor %}
+    </select>
+</div>
+{% endif %}
+
+{% block read %}
+{% if 'R' in table_info %}
+    {% include 'table_read.jinja' %}
+{% endif %}
+{% endblock %}
+{% block create %}
+{% if 'C' in table_info %}
+    {% include 'table_create.jinja' %}
+{% endif %}
+{% endblock %}
+{% block update %}
+{% if 'U' in table_info %}
+    {% include 'table_update.jinja' %}
+{% endif %}
+{% endblock %}
+{% block delete %}
+{% if 'D' in table_info %}
+    {% include 'table_delete.jinja' %}
+{% endif %}
+{% endblock %}
+{% endblock %}

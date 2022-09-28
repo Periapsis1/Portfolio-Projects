@@ -1,0 +1,18 @@
+<table class="db-table">
+    <thead class="db-table-head">
+        <tr>
+            {% for header in table_columns %}
+                <th class="db-table-head-item">{{ header }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody class="db-table-body">
+        {% for row in table_data %}
+            <tr class="db-table-body-row">
+                {% for head, cell in row.items() %}
+                    <td class="db-table-body-item {{ head }}">{{ cell }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

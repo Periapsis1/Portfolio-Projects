@@ -1,0 +1,35 @@
+<div class="container">
+    <h2>
+        Update
+    </h2>
+    <form action="/tables/{{ snake_name }}/update_row" method="POST" class="db-update-form">
+        <label for="row-select">Select Row</label>
+        <select name="row-select" class="update-row-select">
+            {% for row in update_options %}
+                <option value="{{row}}">{{row}}</option>
+            {% endfor %}
+        </select>
+        <br/>
+        {% for input_field, header in zip(input_fields, list(table_data[0].keys())[1:]) %}
+            <label for="{{ input_field.name }}">{{ input_field.label }}</label>
+            {% if input_field.type == 'dropdown' %}
+                <select name="{{ input_field.name }}" class="{{ header }}">
+                    {% for option in input_field.options %}
+                        <option value="{{ option }}">{{ option }}</option>
+                    {% endfor %}
+                </select>
+            {% elif input_field.type == 'text' %}
+                <input type="text" name="{{ input_field.name }}" class="{{ header }}">
+            {% elif input_field.type == 'textarea' %}
+                <textarea name="{{ input_field.name }}" class="{{ header }}"></textarea>
+            {% elif input_field.type == 'date' %}
+                <input type="date" name="{{ input_field.name }}" class="{{ header }}">
+            {% elif input_field.type == 'checkbox' %}
+                <input type="checkbox" name="{{ input_field.name }}" class="{{ header }}">
+            {% else %}
+                <input type="{{ input_field.type }}" name="{{ input_field.name }}" class="{{ header }}"/>
+            {% endif %}
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>

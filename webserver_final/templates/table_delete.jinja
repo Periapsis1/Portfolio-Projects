@@ -1,0 +1,12 @@
+<h2>
+    Delete?
+</h2>
+<form action="/tables/{{ snake_name }}/delete_row" method="POST">
+    <label for="row-select">Select Row</label>
+    <select name="row-select" class="delete-row-select">
+        {% for row in update_options %}
+            <option value="{{row}}">{{row}}</option>
+        {% endfor %}
+    </select>
+    <button type="submit" class="btn btn-primary">Delete</button>
+</form>

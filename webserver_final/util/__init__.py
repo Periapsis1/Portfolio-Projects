@@ -1,0 +1,1 @@
+from .ddl_parser import parse_ddl

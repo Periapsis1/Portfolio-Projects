@@ -1,0 +1,28 @@
+<div class="container">
+    <h2>
+        Create
+    </h2>
+    <form action="/tables/{{ snake_name }}/add_row" method="POST">
+        {% for input_field in input_fields %}
+            <label for="{{ input_field.name }}">{{ input_field.label }}</label>
+            {% if input_field.type == 'dropdown' %}
+                <select name="{{ input_field.name }}">
+                    {% for option in input_field.options %}
+                        <option value="{{ option }}">{{ option }}</option>
+                    {% endfor %}
+                </select>
+            {% elif input_field.type == 'text' %}
+                <input type="text" name="{{ input_field.name }}">
+            {% elif input_field.type == 'textarea' %}
+                <textarea name="{{ input_field.name }}"></textarea>
+            {% elif input_field.type == 'date' %}
+                <input type="date" name="{{ input_field.name }}">
+            {% elif input_field.type == 'checkbox' %}
+                <input type="checkbox" name="{{ input_field.name }}">
+            {% else %}
+                <input type="{{ input_field.type }}" name="{{ input_field.name }}" />
+            {% endif %}
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
